@@ -1,0 +1,21 @@
+{{- $slides := .Site.Data.slides -}}
+{{- range $slides -}}
+<section class="{{- .backgroundColor -}}">
+  <div class="container">
+    <div>
+      <h2 class="font-weight-bold">
+        {{- .heading -}}
+      </h2>
+      <p>{{- .description | safeHTML -}}</p>
+    </div>
+    <div class="screenshot-holder">
+      <img
+        src="{{- .Site.BaseURL -}}img/{{- .screenshot -}}"
+        alt="{{- .screenshotAlt -}}"
+        style="{{- .screenshotStyle | safeCSS -}}"
+      >
+    </div>
+  </div>
+</section>
+{{- end -}}
+   
